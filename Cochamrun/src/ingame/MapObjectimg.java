@@ -1,5 +1,5 @@
 /*형통*/
-package cookierun.cookie;
+package ingame;
 
 import javax.swing.ImageIcon;
 
@@ -32,23 +32,19 @@ public class MapObjectimg {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MapObjectimg(cookierun.cookie.ImageIcon backIc, cookierun.cookie.ImageIcon secondBackIc,
-			cookierun.cookie.ImageIcon jelly1Ic, cookierun.cookie.ImageIcon jelly2Ic,
-			cookierun.cookie.ImageIcon jelly3Ic, cookierun.cookie.ImageIcon jellyHPIC,
-			cookierun.cookie.ImageIcon jellyEffectIc, cookierun.cookie.ImageIcon fileld1Ic,
-			cookierun.cookie.ImageIcon fileld2Ic, cookierun.cookie.ImageIcon tacle10Ic,
-			cookierun.cookie.ImageIcon tacle20Ic, cookierun.cookie.ImageIcon tacle30Ic,
-			cookierun.cookie.ImageIcon tacle40Ic) {
+	public MapObjectImg(ImageIcon backIc, ImageIcon secondBackIc, ImageIcon jelly1Ic, ImageIcon jelly2Ic,
+			ImageIcon jelly3Ic, ImageIcon jellyHPIc, ImageIcon jellyEffectIc, ImageIcon field1Ic, ImageIcon field2Ic,
+			ImageIcon tacle10Ic, ImageIcon tacle20Ic, ImageIcon tacle30Ic, ImageIcon tacle40Ic) {
 		super();
 		this.backIc = backIc;
 		this.secondBackIc = secondBackIc;
 		this.jelly1Ic = jelly1Ic;
 		this.jelly2Ic = jelly2Ic;
 		this.jelly3Ic = jelly3Ic;
-		this.jellyHPIC = jellyHPIC;
+		this.jellyHPIc = jellyHPIc;
 		this.jellyEffectIc = jellyEffectIc;
-		this.fileld1Ic = fileld1Ic;
-		this.fileld2Ic = fileld2Ic;
+		this.field1Ic = field1Ic;
+		this.field2Ic = field2Ic;
 		this.tacle10Ic = tacle10Ic;
 		this.tacle20Ic = tacle20Ic;
 		this.tacle30Ic = tacle30Ic;

@@ -1,5 +1,5 @@
 /*형통*/
-package cookierun.cookie;
+package ingame;
 
 import java.awt.Image;
 
@@ -36,7 +36,7 @@ public class Cookie {
 	}
 	
 
-	public Cookie(cookierun.cookie.Image image, int x, int y, int width, int height, int alpha, int health, int big,
+	public Cookie(Image image, int x, int y, int width, int height, int alpha, int health, int big,
 			int fast, int countJump, boolean invincible, boolean fall, boolean jump) {
 		super();
 		this.image = image;
