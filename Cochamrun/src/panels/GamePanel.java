@@ -385,11 +385,11 @@ public class GamePanel extends JPanel {
 	private void initCookieImg(CookieImg ci) {
 		//쿠키 이미지 아이콘들
 		cookieIc = ci.getCookieIc(); // 기본모션
-		cookieIc = ci.getJumpIc(); // 점프모션
-		cookieIc = ci.getDoubleJumpIc(); // 더블점프모션
-		cookieIc = ci.getFallIC();// 낙하모션(더블 점프후)
-		cookieIc = ci.getSlideIc(); // 슬라이드모션
-		cookieIc = ci.getHitIc();// 부딛히는 모션
+		jumpIc = ci.getJumpIc(); // 점프모션
+		doubleJumpIc = ci.getDoubleJumpIc(); // 더블점프모션
+		fallIc = ci.getFallIC();// 낙하모션(더블 점프후)
+		slideIc = ci.getSlideIc(); // 슬라이드모션
+		hitIc = ci.getHitIc();// 부딛히는 모션
 		
 	}
 	
@@ -448,44 +448,58 @@ public class GamePanel extends JPanel {
 		int maxX = sizeArr[0]; // 맵의 넓이
 		int maxY = sizeArr[1]; // 맵의 높이
 		
-		for(int i=0;i<maxX;i+=1) { // 젤리는 1칸을 차지하기 떄문에 1,1 사이즈로 반복문을 돌린다
-			for(int j=0;j<maxY;j+=1) {
-				if(colorArr[i][j]==16776960) {//색값이 16776960일 경우 기본 젤리 생성
-					//좌표에 40을 곱하고, 넓이와 높이는 30으로한다
-					jellyList.add(new Jelly(jelly1Ic.getImage(),i*40+mapLength*40,j*40,30,30,255,1234));
-					
-				}else if (colorArr[i][j]==13158400) { //색값이 13158400일 경우 노란젤리 생성
-					//좌표에 40을 곱하고,넓이와 높이는 30으로한다
-					jellyList.add(new Jelly(jelly2Ic.getImage(),i*40+mapLength*40,j*40,30,30,255,2345));
-					
-					
-				}else if(colorArr[i][j]==9868800) {// 색값이 9868800일 경우 노란 젤리 생성
-					//좌표에 40을 곱하고, 넓이와 높이는 30으로한다
-					jellyList.add(new Jelly(jelly3Ic.getImage(),i*40+mapLength*40,j*40,30,30,255,3456));
-					
-				}else if(colorArr[i][j]==16737280) { //색값이 16737280 일 경우 피 물약 생성
+		for (int i = 0; i < maxX; i += 1) { // 젤리는 1칸을 차지하기 때문에 1,1사이즈로 반복문을 돌린다.
+			for (int j = 0; j < maxY; j += 1) {
+				if (colorArr[i][j] == 16776960) { // 색값이 16776960일 경우 기본젤리 생성
+					// 좌표에 40을 곱하고, 넓이와 높이는 30으로 한다.
+					jellyList.add(new Jelly(jelly1Ic.getImage(), i * 40 + mapLength * 40, j * 40, 30, 30, 255, 1234));
+
+				} else if (colorArr[i][j] == 13158400) { // 색값이 13158400일 경우 노란젤리 생성
+					// 좌표에 40을 곱하고, 넓이와 높이는 30으로 한다.
+					jellyList.add(new Jelly(jelly2Ic.getImage(), i * 40 + mapLength * 40, j * 40, 30, 30, 255, 2345));
+
+				} else if (colorArr[i][j] == 9868800) { // 색값이 9868800일 경우 노란젤리 생성
+					// 좌표에 40을 곱하고, 넓이와 높이는 30으로 한다.
+					jellyList.add(new Jelly(jelly3Ic.getImage(), i * 40 + mapLength * 40, j * 40, 30, 30, 255, 3456));
+
+				} else if (colorArr[i][j] == 16737280) { // 색값이 16737280일 경우 피 물약 생성
+					// 좌표에 40을 곱하고, 넓이와 높이는 30으로 한다.
 					jellyList.add(new Jelly(jellyHPIc.getImage(), i * 40 + mapLength * 40, j * 40, 30, 30, 255, 4567));
-					
 				}
 			}
 		}
-		for(int i=0;i<maxX;i+=2) { // 장애물은 4칸 이상 차지한다.
-			for(int j=0;j<maxY;j+=2) {
-				if(colorArr[i][j]==16711680) { //색값이 16711680일 경우 (빨간색) 1칸
-					tacleList.add(new Tacle(tacle10Ic.getImage(),i*40+mapLength*40,j*40,80,80,0));
-					// 좌표에 40을 곱하고, 넓이와 높이는 80으로 한다
-				}else if(colorArr[i][j]==16711830) { //색값이 16711830일 경우(분홍)2칸
-					//좌표에 40을 곱하고 넓이와 높이는 160으로 한다
-					tacleList.add(new Tacle(tacle20Ic.getImage(),i*40+mapLength*40,j*40,80,160,0));
-					
-				}else if(colorArr[i][j]==16711935) { // 색값이 16711830 일 경우(핫핑크) 3칸
-					//좌표에 40을 곱하고, 넓이와 높이는 240으로 한다.
-					tacleList.add(new Tacle(tacle30Ic.getImage(),i*40+mapLength*40,j*40,80,240,0));
-					
+
+		for (int i = 0; i < maxX; i += 2) { // 발판은 4칸을 차지하는 공간이기 때문에 2,2사이즈로 반복문을 돌린다.
+			for (int j = 0; j < maxY; j += 2) {
+				if (colorArr[i][j] == 0) { // 색값이 0 일경우 (검은색)
+					// 좌표에 40을 곱하고, 넓이와 높이는 80으로 한다.
+					fieldList.add(new Field(field1Ic.getImage(), i * 40 + mapLength * 40, j * 40, 80, 80));
+
+				} else if (colorArr[i][j] == 6579300) { // 색값이 6579300 일경우 (회색)
+					// 좌표에 40을 곱하고, 넓이와 높이는 80으로 한다.
+					fieldList.add(new Field(field2Ic.getImage(), i * 40 + mapLength * 40, j * 40, 80, 80));
 				}
 			}
 		}
-		this.mapLength = this.mapLength+tempMapLength;
+
+		for (int i = 0; i < maxX; i += 2) { // 장애물은 4칸 이상을 차지한다. 추후 수정
+			for (int j = 0; j < maxY; j += 2) {
+				if (colorArr[i][j] == 16711680) { // 색값이 16711680일 경우 (빨간색) 1칸
+					// 좌표에 40을 곱하고, 넓이와 높이는 80으로 한다.
+					tacleList.add(new Tacle(tacle10Ic.getImage(), i * 40 + mapLength * 40, j * 40, 80, 80, 0));
+
+				} else if (colorArr[i][j] == 16711830) { // 색값이 16711830일 경우 (분홍) 2칸
+					// 좌표에 40을 곱하고, 넓이와 높이는 160으로 한다.
+					tacleList.add(new Tacle(tacle20Ic.getImage(), i * 40 + mapLength * 40, j * 40, 80, 160, 0));
+
+				} else if (colorArr[i][j] == 16711935) { // 색값이 16711830일 경우 (핫핑크) 3칸
+					// 좌표에 40을 곱하고, 넓이와 높이는 240으로 한다.
+					tacleList.add(new Tacle(tacle30Ic.getImage(), i * 40 + mapLength * 40, j * 40, 80, 240, 0));
+				}
+			}
+		}
+
+		this.mapLength = this.mapLength + tempMapLength;
 	}
 	
 	//makeMo, initImageIcon,imitMap 메서드를 이용해서 객체 생성
@@ -535,7 +549,7 @@ public class GamePanel extends JPanel {
 		backIc = mo1.getBackIc();
 		secondBackIc = mo1.getSecondBackIc();
 		
-		backIc = mo2.getBackIc();
+		backIc2 = mo2.getBackIc();
 		secondBackIc2= mo2.getSecondBackIc();
 		
 		backIc3 = mo3.getBackIc();

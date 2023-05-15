@@ -5,7 +5,10 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -81,6 +84,15 @@ public class Main extends listenAdapter {
 	/**/
 	private void initialize() {
 		frame = new JFrame();
+		
+		/* 아이콘!!! 추가해보고 싶었음*/
+		try{
+			frame.setIconImage(ImageIO.read(new File("img/bear.png")));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		frame.setResizable(false);
+		////////////////////////////////////////////////////////////////////
 		
 		/* 아래 코드(.setLocationRelativeTo)로 인해 창 사이즈 800,500은 의미가 없어진다.*/
 		frame.setBounds(100, 100, 800, 500);

@@ -18,7 +18,7 @@ public class Tacle {
 	private int state;
 
 	public Tacle() {
-		
+		super();
 	}
 
 	public Tacle(Image image, int x, int y, int width, int height, int state) {

@@ -10,10 +10,17 @@ public class Back {
 	private int width;
 	private int height;
 	
+	public Back(Image image, int x, int y, int width, int height) {
+		super();
+		this.image = image;
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+	}
 	
 	public Back() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Image getImage() {
@@ -46,16 +53,6 @@ public class Back {
 	public void setHeight(int height) {
 		this.height = height;
 	}
-	public Back(Image image, int x, int y, int width, int height) {
-		super();
-		this.image = image;
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
-	}
 	
 	
-
-
 }
