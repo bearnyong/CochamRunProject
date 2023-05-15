@@ -448,7 +448,7 @@ public class GamePanel extends JPanel {
 		int maxX = sizeArr[0]; // 맵의 넓이
 		int maxY = sizeArr[1]; // 맵의 높이
 		
-		for (int i = 0; i < maxX; i += 1) { // 젤리는 1칸을 차지하기 때문에 1,1사이즈로 반복문을 돌린다.
+		for (int i = 0; i < maxX; i += 1) { // 젤리는 1칸을 차지하기 때문에 1,1사이즈로 반복문을 돌린다. (젤리의 간격임)
 			for (int j = 0; j < maxY; j += 1) {
 				if (colorArr[i][j] == 16776960) { // 색값이 16776960일 경우 기본젤리 생성
 					// 좌표에 40을 곱하고, 넓이와 높이는 30으로 한다.
