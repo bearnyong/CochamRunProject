@@ -11,6 +11,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,6 +82,9 @@ public class GamePanel extends JPanel {
 
 	private ImageIcon slideIconUp;
 	private ImageIcon slideIconDown;
+	
+	/* (수정) 뒤로가기 ESC 버튼 이미지화*/
+	private ImageIcon escc = new ImageIcon("img/back.png");
 
 	Image jumpBtn;
 	Image slideBtn;
@@ -157,8 +161,8 @@ public class GamePanel extends JPanel {
 		this.main = (Main) o;
 
 		// 일시정지 버튼
-		escButton = new JButton("back");
-		escButton.setBounds(350, 200, 100, 30);
+		escButton = new JButton(escc);
+		escButton.setBounds(254, 200, 291, 81);
 		escButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

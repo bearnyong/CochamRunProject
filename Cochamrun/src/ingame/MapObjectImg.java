@@ -29,7 +29,6 @@ public class MapObjectImg {
 	
 	public MapObjectImg() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public MapObjectImg(ImageIcon backIc, ImageIcon secondBackIc, ImageIcon jelly1Ic, ImageIcon jelly2Ic,

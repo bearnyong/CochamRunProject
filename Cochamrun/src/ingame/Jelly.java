@@ -34,7 +34,6 @@ private Image image; // 젤리 이미지
 
 	public Jelly() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Image getImage() {

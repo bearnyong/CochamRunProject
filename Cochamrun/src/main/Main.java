@@ -89,7 +89,7 @@ public class Main extends listenAdapter {
 		
 		/* 아이콘!!! 추가해보고 싶었음*/
 		try{
-			frame.setIconImage(ImageIO.read(new File("img/bear.png")));
+			frame.setIconImage(ImageIO.read(new File("img/favicon.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

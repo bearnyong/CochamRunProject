@@ -38,16 +38,18 @@ public class EndPanel extends JPanel {
 		add(btnNewButton);
 		
 		/* 점수 글자 */
-		lblNewLabel_1 = new JLabel("SCORE");	
+		/* (수정) SCORE(문자) 위치 변경*/
+		lblNewLabel_1 = new JLabel("SCORE :-)");	
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Gill Sans Ultra Bold", Font.PLAIN, 37));
-		lblNewLabel_1.setBounds(451, 0, 205, 55);
+		lblNewLabel_1.setFont(new Font("Gill Sans Ultra Bold", Font.PLAIN, 30));
+		lblNewLabel_1.setBounds(515, 50, 205, 55);
 		add(lblNewLabel_1);
 		
+		/* (수정) SCORE(숫자) 위치 및 폰트 변경*/
 		lblNewLabel_2 = new JLabel("0");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("Harlow Solid Italic", Font.PLAIN, 49));
-		lblNewLabel_2.setBounds(313, 52, 459, 87);
+		lblNewLabel_2.setFont(new Font("Gill Sans Ultra Bold", Font.PLAIN, 37));
+		lblNewLabel_2.setBounds(385, 73, 459, 87);
 		add(lblNewLabel_2);
 		
 		lblNewLabel = new JLabel("");
