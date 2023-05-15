@@ -2,6 +2,21 @@
 package util;
 
 import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.font.TextLayout;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
+import java.awt.image.PixelGrabber;
+import java.io.File;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
+import javax.imageio.ImageIO;
 
 public class Util {
 
@@ -32,7 +47,7 @@ public class Util {
 	}
 	
 	/* 현재시간 타임스탬프로 가져오기*/
-	public static lon getTime() {
+	public static long getTime() {
 		return Timestamp.valueOf(LocalDateTime.now()).getTime();
 	}
 	

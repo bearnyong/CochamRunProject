@@ -66,5 +66,12 @@ public class Field {
 	public void setHeight(int height) {
 		this.height = height;
 	}
+
+	@Override
+	public String toString() {
+		return "Field [image=" + image + ", x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + "]";
+	}
+	
+	
 	
 }

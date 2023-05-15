@@ -13,13 +13,13 @@ public class MapObjectImg {
 	private ImageIcon jelly1Ic;
 	private ImageIcon jelly2Ic;
 	private ImageIcon jelly3Ic;
-	private ImageIcon jellyHPIC;
+	private ImageIcon jellyHPIc;
 	
 	private ImageIcon jellyEffectIc;
 	
 	// 발판 이미지 아이콘들
-	private ImageIcon fileld1Ic; //발판
-	private ImageIcon fileld2Ic; //공중발판
+	private ImageIcon field1Ic; //발판
+	private ImageIcon field2Ic; //공중발판
 	
 	// 장애물 이미지 아이콘들
 	private ImageIcon tacle10Ic; // 1칸 장애물
@@ -31,10 +31,9 @@ public class MapObjectImg {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
+	
 	public MapObjectImg(ImageIcon backIc, ImageIcon secondBackIc, ImageIcon jelly1Ic, ImageIcon jelly2Ic,
-			ImageIcon jelly3Ic, ImageIcon jellyHPIC, ImageIcon jellyEffectIc, ImageIcon fileld1Ic, ImageIcon fileld2Ic,
+			ImageIcon jelly3Ic, ImageIcon jellyHPIc, ImageIcon jellyEffectIc, ImageIcon field1Ic, ImageIcon field2Ic,
 			ImageIcon tacle10Ic, ImageIcon tacle20Ic, ImageIcon tacle30Ic, ImageIcon tacle40Ic) {
 		super();
 		this.backIc = backIc;
@@ -42,17 +41,15 @@ public class MapObjectImg {
 		this.jelly1Ic = jelly1Ic;
 		this.jelly2Ic = jelly2Ic;
 		this.jelly3Ic = jelly3Ic;
-		this.jellyHPIC = jellyHPIC;
+		this.jellyHPIc = jellyHPIc;
 		this.jellyEffectIc = jellyEffectIc;
-		this.fileld1Ic = fileld1Ic;
-		this.fileld2Ic = fileld2Ic;
+		this.field1Ic = field1Ic;
+		this.field2Ic = field2Ic;
 		this.tacle10Ic = tacle10Ic;
 		this.tacle20Ic = tacle20Ic;
 		this.tacle30Ic = tacle30Ic;
 		this.tacle40Ic = tacle40Ic;
 	}
-
-
 
 	public ImageIcon getBackIc() {
 		return backIc;
@@ -94,12 +91,12 @@ public class MapObjectImg {
 		this.jelly3Ic = jelly3Ic;
 	}
 
-	public ImageIcon getJellyHPIC() {
-		return jellyHPIC;
+	public ImageIcon getJellyHPIc() {
+		return jellyHPIc;
 	}
 
-	public void setJellyHPIC(ImageIcon jellyHPIC) {
-		this.jellyHPIC = jellyHPIC;
+	public void setJellyHPIc(ImageIcon jellyHPIc) {
+		this.jellyHPIc = jellyHPIc;
 	}
 
 	public ImageIcon getJellyEffectIc() {
@@ -110,20 +107,20 @@ public class MapObjectImg {
 		this.jellyEffectIc = jellyEffectIc;
 	}
 
-	public ImageIcon getFileld1Ic() {
-		return fileld1Ic;
+	public ImageIcon getField1Ic() {
+		return field1Ic;
 	}
 
-	public void setFileld1Ic(ImageIcon fileld1Ic) {
-		this.fileld1Ic = fileld1Ic;
+	public void setField1Ic(ImageIcon field1Ic) {
+		this.field1Ic = field1Ic;
 	}
 
-	public ImageIcon getFileld2Ic() {
-		return fileld2Ic;
+	public ImageIcon getField2Ic() {
+		return field2Ic;
 	}
 
-	public void setFileld2Ic(ImageIcon fileld2Ic) {
-		this.fileld2Ic = fileld2Ic;
+	public void setField2Ic(ImageIcon field2Ic) {
+		this.field2Ic = field2Ic;
 	}
 
 	public ImageIcon getTacle10Ic() {
@@ -157,12 +154,6 @@ public class MapObjectImg {
 	public void setTacle40Ic(ImageIcon tacle40Ic) {
 		this.tacle40Ic = tacle40Ic;
 	}
-
-	@Override
-	public String toString() {
-		return "MapObjectimg []";
-	}
-	
 	
 	
 	

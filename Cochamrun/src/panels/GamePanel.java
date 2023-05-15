@@ -451,7 +451,7 @@ public class GamePanel extends JPanel {
 		
 		for(int i=0;i<maxX;i+=1) { // 젤리는 1칸을 차지하기 떄문에 1,1 사이즈로 반복문을 돌린다
 			for(int j=0;j<maxY;j+=1) {
-				if(coloArr[i][j]==16776960) {//색값이 16776960일 경우 기본 젤리 생성
+				if(colorArr[i][j]==16776960) {//색값이 16776960일 경우 기본 젤리 생성
 					//좌표에 40을 곱하고, 넓이와 높이는 30으로한다
 					jellyList.add(new Jelly(jelly1Ic.getImage(),i*40+mapLength*40,j*40,30,30,255,1234));
 					
@@ -465,8 +465,7 @@ public class GamePanel extends JPanel {
 					jellyList.add(new Jelly(jelly3Ic.getImage(),i*40+mapLength*40,j*40,30,30,255,3456));
 					
 				}else if(colorArr[i][j]==16737280) { //색값이 16737280 일 경우 피 물약 생성
-					jellyList.add(new Jelly(jellyHPic.getImage(),i*40+mapLength*40,30,30,255,4567));
-					
+					jellyList.add(new Jelly(jellyHPIc.getImage(), i * 40 + mapLength * 40, j * 40, 30, 30, 255, 4567));
 					
 				}
 			}
@@ -583,7 +582,7 @@ public class GamePanel extends JPanel {
 			public void  keyPressed(KeyEvent e) {
 				if(e.getKeyCode()==KeyEvent.VK_ESCAPE) { //esc 키를 눌렀을 때
 					if(!escKeyOn){
-						secKeyOn = true;
+						escKeyOn = true;
 						add(escButton);
 						repaint(); // 화면을 어둡게 하기 위한 리페인트
 						
@@ -634,7 +633,7 @@ public class GamePanel extends JPanel {
 		});
 	}
 	// 리페인트 전용 쓰레드 추가 메서드
-	private void runPepaint() {
+	private void runRepaint() {
 		// 리페인트 전용 쓰레드
 		
 		new Thread(new Runnable() {
@@ -1291,7 +1290,7 @@ public class GamePanel extends JPanel {
 		
 		
 	
-}
+
 	
 	
 	

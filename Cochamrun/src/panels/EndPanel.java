@@ -2,11 +2,15 @@
 package panels;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class EndPanel extends JPanel {
 	

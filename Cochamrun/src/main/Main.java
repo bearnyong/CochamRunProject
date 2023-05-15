@@ -1,10 +1,12 @@
 /*민영*/
 package main;
 
-import java.awt.CardLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -13,8 +15,11 @@ import panels.EndPanel;
 import panels.GamePanel;
 import panels.IntroPanel;
 import panels.SelectPanel;
+import main.listenAdapter;
 
-public class Main {
+import java.awt.CardLayout;
+
+public class Main extends listenAdapter {
 	
 	/* 창을 띄우기 위한 프레임 */
 	private JFrame frame;
@@ -56,7 +61,7 @@ public class Main {
 	
 	/* 프로그램 시작 */
 	public static void main(String[] args) {
-		EventQueue.invokeAndWait(new Runnable() {
+		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					Main window = new Main();
@@ -122,7 +127,7 @@ public class Main {
 	public void mousePressed(MouseEvent e) {
 		
 		/* (시작 인트로 화면 이미지) IntroPanel에서 마우스를 눌렀다면*/
-		if(e.getComponent().toString().contains("IntroPanel"))
+		if(e.getComponent().toString().contains("IntroPanel")) {
 			try {
 				Thread.sleep(300);
 			} catch(InterruptedException el) {
@@ -133,13 +138,13 @@ public class Main {
 		cl.show(frame.getContentPane(), "select");
 		
 		/* 리스너를 select 패널에 강제로 줌*/
-		selectPanel.requesFocus();
+		selectPanel.requestFocus();
 		
 	  /* StartBtn이라는 이름을 가진 버튼을 마우스로 눌렀다면*/
 	} else if(e.getComponent().getName().equals("StartBtn")) {
 		
 		/* 캐릭터를 고르지 않았을 경우 "골라주세요" 팝업창 */
-		if(selectPanel.qetCi() == null) {
+		if(selectPanel.getCi() == null) {
 			JOptionPane.showMessageDialog(null, "캐릭터를 골라주세요");
 		} else {
 			
@@ -155,6 +160,7 @@ public class Main {
 			/* 리스너를 game패널에 강제로 줌 */
 			gamePanel.requestFocus();
 		}
+		
 		
 	  /* endAccept 이라는 이름을 가진 버튼을 눌렀다면 */
 	} else if (e.getComponent().getName().equals("endAccept")) { 
