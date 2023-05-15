@@ -14,6 +14,10 @@ public class Field {
 	private int width;  //발판의 넓이
 	private int height; //발판의 높이
 	
+	public Field() {
+		super();
+	}
+	
 	public Field(Image image, int x, int y, int width, int height) {
 		super();
 		this.image = image;
@@ -23,10 +27,7 @@ public class Field {
 		this.height = height;
 	}
 
-	public Field() {
-		super();
-	}
-
+	
 	public Image getImage() {
 		return image;
 	}

@@ -187,7 +187,6 @@ public class GamePanel extends JPanel {
 	public void gameStart() {
 
 		mapMove(); // 배경 젤리 발판 장애물 작동
-
 		fall(); // 낙하 스레드 발동
 
 	}
@@ -632,6 +631,7 @@ public class GamePanel extends JPanel {
 			
 		});
 	}
+	
 	// 리페인트 전용 쓰레드 추가 메서드
 	private void runRepaint() {
 		// 리페인트 전용 쓰레드

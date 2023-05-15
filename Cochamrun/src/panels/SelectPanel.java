@@ -57,22 +57,22 @@ public class SelectPanel extends JPanel{
 		StartBtn.addMouseListener((MouseListener)o);
 		StartBtn.setBounds(254, 334, 291, 81);
 		add(StartBtn);
-		StartBtn.setBorderPainted(false); //�׵θ� ����
-		StartBtn.setContentAreaFilled(false); // ���뿵�� ä��� ���ֱ�
-		StartBtn.setFocusPainted(false); //��ư ��Ŀ��
+		StartBtn.setBorderPainted(false); 
+		StartBtn.setContentAreaFilled(false); 
+		StartBtn.setFocusPainted(false); 
 		
 		
 		//캐럭티 ch1
-		ch1 = new JButton(ch01);
+		ch1 = new JButton(ch01);  // 처음 캐릭터 선택 창에서 보여지는 이미지
 		ch1.setName("ch1");
-		ch1.addMouseListener(new MouseAdapter(){
+		ch1.addMouseListener(new MouseAdapter() {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
 				ch1.setIcon(ch011);
-				ch1.setIcon(ch02);
-				ch1.setIcon(ch03);
-				ch1.setIcon(ch04);
+				ch2.setIcon(ch02);
+				ch3.setIcon(ch03);
+				ch4.setIcon(ch04);
 				ci= new CookieImg(new ImageIcon("img/cookieimg/cookie1/player_origin.gif"),
 						new ImageIcon("img/cookieimg/cookie1/player_up.gif"),
 						new ImageIcon("img/cookieimg/cookie1/player_doubleup.gif"),
@@ -83,11 +83,13 @@ public class SelectPanel extends JPanel{
 			}
 			
 		});
+		
 		ch1.setBounds(90, 102, 150, 200);
 		add(ch1);
 		ch1.setBorderPainted(false); //�׵θ�����
 		ch1.setContentAreaFilled(false); //���뿵�� ����
 		ch1.setFocusPainted(false);
+		
 		
 		// 캐릭터 ch2
 		ch2 = new JButton(ch02);
@@ -113,6 +115,7 @@ public class SelectPanel extends JPanel{
 		ch2.setBorderPainted(false); // �׵θ�����
 		ch2.setContentAreaFilled(false); // ���뿵�� ä��� ���ֱ�
 		ch2.setFocusPainted(false); // ��ư��Ŀ��
+		
 		
 		// 캐릭터 ch3
 		ch3 = new JButton(ch03);
