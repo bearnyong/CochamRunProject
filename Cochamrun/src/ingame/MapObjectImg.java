@@ -3,7 +3,7 @@ package ingame;
 
 import javax.swing.ImageIcon;
 
-public class MapObjectimg {
+public class MapObjectImg {
 
 	//배경 이미지
 	private ImageIcon backIc; //제일 뒷배경
@@ -27,13 +27,14 @@ public class MapObjectimg {
 	private ImageIcon tacle30Ic; // 3칸 장애문
 	private ImageIcon tacle40Ic; // 4칸 장애물
 	
-	public MapObjectimg() {
+	public MapObjectImg() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+
 	public MapObjectImg(ImageIcon backIc, ImageIcon secondBackIc, ImageIcon jelly1Ic, ImageIcon jelly2Ic,
-			ImageIcon jelly3Ic, ImageIcon jellyHPIc, ImageIcon jellyEffectIc, ImageIcon field1Ic, ImageIcon field2Ic,
+			ImageIcon jelly3Ic, ImageIcon jellyHPIC, ImageIcon jellyEffectIc, ImageIcon fileld1Ic, ImageIcon fileld2Ic,
 			ImageIcon tacle10Ic, ImageIcon tacle20Ic, ImageIcon tacle30Ic, ImageIcon tacle40Ic) {
 		super();
 		this.backIc = backIc;
@@ -41,15 +42,17 @@ public class MapObjectimg {
 		this.jelly1Ic = jelly1Ic;
 		this.jelly2Ic = jelly2Ic;
 		this.jelly3Ic = jelly3Ic;
-		this.jellyHPIc = jellyHPIc;
+		this.jellyHPIC = jellyHPIC;
 		this.jellyEffectIc = jellyEffectIc;
-		this.field1Ic = field1Ic;
-		this.field2Ic = field2Ic;
+		this.fileld1Ic = fileld1Ic;
+		this.fileld2Ic = fileld2Ic;
 		this.tacle10Ic = tacle10Ic;
 		this.tacle20Ic = tacle20Ic;
 		this.tacle30Ic = tacle30Ic;
 		this.tacle40Ic = tacle40Ic;
 	}
+
+
 
 	public ImageIcon getBackIc() {
 		return backIc;

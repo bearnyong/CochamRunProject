@@ -1,6 +1,8 @@
 /*민영*/
 package ingame;
 
+import java.awt.Image;
+
 public class Field {
 	
 	/*발판 이미지*/

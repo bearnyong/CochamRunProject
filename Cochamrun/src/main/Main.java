@@ -6,6 +6,13 @@ import java.awt.EventQueue;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import ingame.CookieImg;
+import panels.EndPanel;
+import panels.GamePanel;
+import panels.IntroPanel;
+import panels.SelectPanel;
 
 public class Main {
 	
@@ -58,7 +65,7 @@ public class Main {
 					e.printStackTrace();
 				}
 			}
-		};
+		});
 	}
 	
 	/**/
@@ -178,5 +185,6 @@ public class Main {
 		/* 리스너를 select패널에 강제로 줌 */ 
 		selectPanel.requestFocus(); 
 	}
+}
 
 }

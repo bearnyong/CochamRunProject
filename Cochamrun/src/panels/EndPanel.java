@@ -3,7 +3,12 @@ package panels;
 
 import java.awt.Color;
 
-public class EndPanel extends Japanel {
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class EndPanel extends JPanel {
 	
 	ImageIcon btn = new ImageIcon("img/end/button.png");
 	JButton btnNewButton;
