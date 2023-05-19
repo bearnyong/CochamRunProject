@@ -219,7 +219,7 @@ public class GamePanel extends JPanel {
 
 	// 게임을 시작한다
 	public void gameStart() {
-
+	
 		mapMove(); // 배경 젤리 발판 장애물 작동
 		fall(); // 낙하 스레드 발동
 
@@ -918,7 +918,8 @@ public class GamePanel extends JPanel {
 									&& tempJelly.getY() + tempJelly.getWidth() * 20 / 100 >= c1.getY()
 									&& tempJelly.getY() + tempJelly.getWidth() * 80 / 100 <= foot
 									&& tempJelly.getImage() != jellyEffectIc.getImage()) {
-
+								Music jellySound = new Music("jelly2.mp3",false); //효과음
+								jellySound.start();
 								if (tempJelly.getImage() == jellyHPIc.getImage()) {
 									if ((c1.getHealth() + 100) > 1000) {
 										c1.setHealth(1000);

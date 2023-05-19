@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import ingame.CookieImg;
+import main.Music;
 
 public class SelectPanel extends JPanel{
 	// 선택할 캐릭터 이미지 아이콘
@@ -69,6 +70,8 @@ public class SelectPanel extends JPanel{
 
 			@Override
 			public void mousePressed(MouseEvent e) {
+				Music selectSound = new Music("선택음2.mp3",false); //효과음
+				selectSound.start();
 				ch1.setIcon(ch011);
 				ch2.setIcon(ch02);
 				ch3.setIcon(ch03);
@@ -99,6 +102,8 @@ public class SelectPanel extends JPanel{
 
 			@Override
 			public void mousePressed(MouseEvent e) {
+				Music selectSound = new Music("선택음2.mp3",false); //효과음
+				selectSound.start();
 				ch1.setIcon(ch01);
 				ch2.setIcon(ch022);
 				ch3.setIcon(ch03);
@@ -126,6 +131,8 @@ public class SelectPanel extends JPanel{
 
 			@Override
 			public void mousePressed(MouseEvent e) {
+				Music selectSound = new Music("선택음2.mp3",false); //효과음
+				selectSound.start();
 				ch1.setIcon(ch01);
 				ch2.setIcon(ch02);
 				ch3.setIcon(ch033);
@@ -153,6 +160,8 @@ public class SelectPanel extends JPanel{
 
 			@Override
 			public void mousePressed(MouseEvent e) {
+				Music selectSound = new Music("선택음2.mp3",false); //효과음
+				selectSound.start();
 				ch1.setIcon(ch01);
 				ch2.setIcon(ch02);
 				ch3.setIcon(ch03);

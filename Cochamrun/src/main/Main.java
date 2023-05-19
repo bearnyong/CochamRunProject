@@ -60,8 +60,8 @@ public class Main extends listenAdapter {
 		return endPanel;
 	}
 	
-	
-	
+//	Music introMusic = new Music("intro.mp3",true);
+	Music mainMusic = new Music("mu.mp3",true);
 	/* 프로그램 시작 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -79,8 +79,9 @@ public class Main extends listenAdapter {
 	/**/
 	public Main() {
 		initialize();
-		Music intro = new Music("mu.mp3",true);
-		intro.start();
+		
+		mainMusic.start();
+		
 	}
 	
 	/**/
@@ -142,6 +143,9 @@ public class Main extends listenAdapter {
 		
 		/* (시작 인트로 화면 이미지) IntroPanel에서 마우스를 눌렀다면*/
 		if(e.getComponent().toString().contains("IntroPanel")) {
+			Music mainStartMusic = new Music("선택음.mp3",false);
+			mainStartMusic.start();
+			
 			try {
 				Thread.sleep(300);
 			} catch(InterruptedException el) {
@@ -156,6 +160,10 @@ public class Main extends listenAdapter {
 		
 	  /* StartBtn이라는 이름을 가진 버튼을 마우스로 눌렀다면*/
 	} else if(e.getComponent().getName().equals("StartBtn")) {
+		Music mainStartSound = new Music("선택음2.mp3",false);
+		mainStartSound.start();
+	
+	
 		
 		/* 캐릭터를 고르지 않았을 경우 "골라주세요" 팝업창 */
 		if(selectPanel.getCi() == null) {
@@ -178,7 +186,7 @@ public class Main extends listenAdapter {
 		
 	  /* endAccept 이라는 이름을 가진 버튼을 눌렀다면 */
 	} else if (e.getComponent().getName().equals("endAccept")) { 
-		
+	
 		/* 방금 했던 게임 패널을 프레임에서 삭제 */
 		frame.getContentPane().remove(gamePanel); 
 		
