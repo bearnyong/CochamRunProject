@@ -42,6 +42,7 @@ public class EndPanel extends JPanel {
 		lblNewLabel_1 = new JLabel("SCORE :-)");	
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Gill Sans Ultra Bold", Font.PLAIN, 30));
+		lblNewLabel_1.setForeground(Color.white); //(수정)폰트 색 화이트로 변경
 		lblNewLabel_1.setBounds(515, 50, 205, 55);
 		add(lblNewLabel_1);
 		
@@ -49,6 +50,7 @@ public class EndPanel extends JPanel {
 		lblNewLabel_2 = new JLabel("0");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("Gill Sans Ultra Bold", Font.PLAIN, 37));
+		lblNewLabel_2.setForeground(Color.white); //(수정)폰트 색 화이트로 변경
 		lblNewLabel_2.setBounds(385, 73, 459, 87);
 		add(lblNewLabel_2);
 		

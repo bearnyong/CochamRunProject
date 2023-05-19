@@ -79,7 +79,7 @@ public class Main extends listenAdapter {
 	/**/
 	public Main() {
 		initialize();
-		Music intro = new Music("mu.mp3");
+		Music intro = new Music("mu.mp3",true);
 		intro.start();
 	}
 	

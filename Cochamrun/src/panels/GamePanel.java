@@ -163,6 +163,8 @@ public class GamePanel extends JPanel {
 		// 일시정지 버튼
 		escButton = new JButton(escc);
 		escButton.setBounds(254, 200, 291, 81);
+		escButton.setContentAreaFilled(false);
+		escButton.setFocusPainted(false);
 		escButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
