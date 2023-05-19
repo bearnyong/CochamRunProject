@@ -106,7 +106,7 @@ public class SelectPanel extends JPanel{
 				ci = new CookieImg(new ImageIcon("img/cookieimg/cookie2/normal.gif"),
 						new ImageIcon("img/cookieimg/cookie2/jump.gif"),
 						new ImageIcon("img/cookieimg/cookie2/doublejump.gif"),
-						new ImageIcon("img/cookieing/cookie2/doublejump.gif"), //추가
+						new ImageIcon("img/cookieimg/cookie2/doublejump.gif"), //추가
 						new ImageIcon("img/cookieimg/cookie2/fall.png"),
 						new ImageIcon("img/cookieimg/cookie2/slide.gif"),
 						new ImageIcon("img/cookieimg/cookie2/hit.gif"));

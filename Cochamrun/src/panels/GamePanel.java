@@ -28,6 +28,7 @@ import ingame.Jelly;
 import ingame.MapObjectImg;
 import ingame.Tacle;
 import main.Main;
+import main.Music;
 import util.Util;
 
 public class GamePanel extends JPanel {
@@ -642,6 +643,8 @@ public class GamePanel extends JPanel {
 						// 쿠키이미지가 슬라이드 중이 아니고 점프중이 아니며 낙하중도 아닐때
 						if(c1.getImage()!=slideIc.getImage()&& !c1.isJump()&&!c1.isFall()) {
 							c1.setImage(slideIc.getImage());// 슬라이드 이미지로 변경
+							Music slideSound = new Music("점프10.mp3",false);
+							slideSound.start();
 						}
 						
 					}
@@ -1071,7 +1074,8 @@ public class GamePanel extends JPanel {
 
 			@Override
 			public void run() {
-
+				Music hitSound = new Music("hit.mp3",false);
+				hitSound.start();
 				c1.setInvincible(true); // 쿠키를 무적상태로 전환
 
 				System.out.println("피격무적시작");
@@ -1233,24 +1237,25 @@ public class GamePanel extends JPanel {
 
 			@Override
 			public void run() {
-
+				Music joupSound = new Music("점프5.mp3",false);
 				c1.setCountJump(c1.getCountJump() + 1); // 점프 횟수 증가
 
 				int nowJump = c1.getCountJump(); // 이번점프가 점프인지 더블점프인지 저장
-
+				
 				c1.setJump(true); // 점프중으로 변경
 
 				if (c1.getCountJump() == 1) { // 점프 횟수가 1이라면
-
+					joupSound.start();
 					System.out.println("점프");
 					c1.setImage(jumpIc.getImage());
 
 				} if (c1.getCountJump() == 2) { // 점프 횟수가 2라면
-
+					joupSound.start();
 					System.out.println("더블점프");
 					c1.setImage(doubleJumpIc.getImage());
 
 				} else if (c1.getCountJump() == 3) { //(수정)점프 횟수가 3라면 (추가) 
+					joupSound.start();
 					System.out.println("트리플점프");
 					c1.setImage(tripleJumpIc.getImage());
 				}
