@@ -37,6 +37,7 @@ public class GamePanel extends JPanel {
 	private ImageIcon cookieIc; // 기본모션
 	private ImageIcon jumpIc; // 점프모션
 	private ImageIcon doubleJumpIc; // 더블점프모션
+	private ImageIcon tripleJumpIc; // 트리플점프 모션 (추가)
 	private ImageIcon fallIc; // 낙하모션(더블 점프 후)
 	private ImageIcon slideIc; // 슬라이드 모션
 	private ImageIcon hitIc; // 부딛히는 모션
@@ -85,7 +86,11 @@ public class GamePanel extends JPanel {
 	
 	/* (수정) 뒤로가기 ESC 버튼 이미지화*/
 	private ImageIcon escc = new ImageIcon("img/back.png");
-
+	
+	/*(수정중)ImageIcon btn = new ImageIcon("img/end/button.png");
+	JButton btnNewButton;
+	*/
+	
 	Image jumpBtn;
 	Image slideBtn;
 
@@ -107,6 +112,7 @@ public class GamePanel extends JPanel {
 	private int resultScore = 0; // 결과점수를 수집하는 변수
 
 	private int gameSpeed = 5; // 게임 속도
+	//private int gameSpeed1 = 7; // 게임 속도2
 
 	private int nowField = 2000; // 발판의 높이를 저장.
 
@@ -161,14 +167,24 @@ public class GamePanel extends JPanel {
 		this.main = (Main) o;
 
 		// 일시정지 버튼
+		/*(수정중)btnNewButton = new JButton(btn);
+		btnNewButton.setName("endAccept"); //처음으로 버튼 누르면 캐릭터 선택 창으로 이동
+		btnNewButton.addMouseListener((MouseListener) o);
+		btnNewButton.setBounds(550, 370, 199, 81);
+		btnNewButton.setBorderPainted(false);
+		btnNewButton.setFocusPainted(false);
+		btnNewButton.setContentAreaFilled(false);
+		add(btnNewButton);
+		*/
 		escButton = new JButton(escc);
 		escButton.setBounds(254, 200, 291, 81);
-		escButton.setContentAreaFilled(false);
-		escButton.setFocusPainted(false);
+		escButton.setBorderPainted(false); //(수정) Jbutton의 Borde(외곽선)을 없애주겠다.
+		escButton.setContentAreaFilled(false); //(수정) Jbutton의 버튼 내부 채우기x
+		escButton.setFocusPainted(false); //(수정) JButton 버튼을 선택하였을 때 발생되는 테두리 제거
 		escButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				remove(escButton);
+				remove(escButton); //일시정지 삭제
 				escKeyOn = false;
 			}
 		});
@@ -393,6 +409,7 @@ public class GamePanel extends JPanel {
 		cookieIc = ci.getCookieIc(); // 기본모션
 		jumpIc = ci.getJumpIc(); // 점프모션
 		doubleJumpIc = ci.getDoubleJumpIc(); // 더블점프모션
+		tripleJumpIc = ci.getTripleJumpIc(); // (수정)트리플점프모션(추가)
 		fallIc = ci.getFallIC();// 낙하모션(더블 점프후)
 		slideIc = ci.getSlideIc(); // 슬라이드모션
 		hitIc = ci.getHitIc();// 부딛히는 모션
@@ -614,7 +631,7 @@ public class GamePanel extends JPanel {
 				if(!escKeyOn) {
 					if(e.getKeyCode()==KeyEvent.VK_SPACE) { // 스페이스 키를 누르고 더블 점프
 						jumpBtn = jumpButtonIconDown.getImage();
-						if(c1.getCountJump()<2) {
+						if(c1.getCountJump()<3) {
 							jump(); // 점프 메서드 가동
 						}
 					}
@@ -701,7 +718,7 @@ public class GamePanel extends JPanel {
 					}
 					
 					/* 화면이 이동하면 runPage에 이동한 만큼 저장된다.*/
-					runPage += gameSpeed; 
+					runPage += gameSpeed;
 					
 					/* 캐릭터 발 위치 재스캔 */
 					foot = c1.getY() + c1.getHeight(); 
@@ -1228,16 +1245,18 @@ public class GamePanel extends JPanel {
 					System.out.println("점프");
 					c1.setImage(jumpIc.getImage());
 
-				} else if (c1.getCountJump() == 2) { // 점프 횟수가 2라면
+				} if (c1.getCountJump() == 2) { // 점프 횟수가 2라면
 
 					System.out.println("더블점프");
 					c1.setImage(doubleJumpIc.getImage());
 
+				} else if (c1.getCountJump() == 3) { //(수정)점프 횟수가 3라면 (추가) 
+					System.out.println("트리플점프");
+					c1.setImage(tripleJumpIc.getImage());
 				}
-
 				long t1 = Util.getTime(); // 현재시간을 가져온다
 				long t2;
-				int set = 8; // 점프 계수 설정(0~20) 등으로 바꿔보자
+				int set = 10; // 점프 계수 설정(0~20) 등으로 바꿔보자
 				int jumpY = 1; // 1이상으로만 설정하면 된다.(while문 조건 때문)
 
 				while (jumpY >= 0) { // 상승 높이가 0일때까지 반복
@@ -1250,6 +1269,9 @@ public class GamePanel extends JPanel {
 
 					if (nowJump != c1.getCountJump()) { // 점프가 한번 더되면 첫번째 점프는 멈춘다.
 						break;
+					}
+					else if (nowJump != c1.getCountJump()) { // (추가) 점프가 한번 더 되면 두 번째 점프는 멈춘다.
+						
 					}
 
 					if (escKeyOn) {

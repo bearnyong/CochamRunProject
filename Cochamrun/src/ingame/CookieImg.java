@@ -8,6 +8,7 @@ public class CookieImg {
 	private ImageIcon cookieIc; // 기본모션
 	private ImageIcon jumpIc; // 점프모션
 	private ImageIcon doubleJumpIc; // 더블점프모션
+	private ImageIcon tripleJumpIc; // (수정)트리플점프 모션, 게터세터 생성
 	private ImageIcon fallIC; // 낙하모션(더블 점프후)
 	private ImageIcon slideIc; // 슬라이드 모션
 	private ImageIcon hitIc; // 부딪히는 모션
@@ -18,11 +19,12 @@ public class CookieImg {
 	}
 
 
-	public CookieImg(ImageIcon cookieIc, ImageIcon jumpIc, ImageIcon doubleJumpIc, ImageIcon fallIC, ImageIcon slideIc,
+	public CookieImg(ImageIcon cookieIc, ImageIcon jumpIc, ImageIcon doubleJumpIc, ImageIcon tripleJumpIc/*(수정)*/, ImageIcon fallIC, ImageIcon slideIc,
 			ImageIcon hitIc) {
 		this.cookieIc = cookieIc;
 		this.jumpIc = jumpIc;
 		this.doubleJumpIc = doubleJumpIc;
+		this.tripleJumpIc = tripleJumpIc; //(수정)트리플점프 모션
 		this.fallIC = fallIC;
 		this.slideIc = slideIc;
 		this.hitIc = hitIc;
@@ -57,6 +59,15 @@ public class CookieImg {
 	public void setDoubleJumpIc(ImageIcon doubleJumpIc) {
 		this.doubleJumpIc = doubleJumpIc;
 	}
+	
+	public ImageIcon getTripleJumpIc() {
+		return tripleJumpIc;
+	}
+	
+	public void setTripleJumpIc(ImageIcon doubleJumpIc) {
+		this.tripleJumpIc = doubleJumpIc;
+	}
+	
 
 
 	public ImageIcon getFallIC() {

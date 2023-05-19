@@ -62,7 +62,7 @@ public class SelectPanel extends JPanel{
 		StartBtn.setFocusPainted(false); 
 		
 		
-		//캐럭티 ch1
+		//캐릭터 ch1
 		ch1 = new JButton(ch01);  // 처음 캐릭터 선택 창에서 보여지는 이미지
 		ch1.setName("ch1");
 		ch1.addMouseListener(new MouseAdapter() {
@@ -76,6 +76,7 @@ public class SelectPanel extends JPanel{
 				ci= new CookieImg(new ImageIcon("img/cookieimg/cookie1/player_origin.gif"),
 						new ImageIcon("img/cookieimg/cookie1/player_up.gif"),
 						new ImageIcon("img/cookieimg/cookie1/player_doubleup.gif"),
+						new ImageIcon("img/cookieimg/cookie1/player_doubleup.gif"), //추가
 						new ImageIcon("img/cookieimg/cookie1/player_jumpend.png"),
 						new ImageIcon("img/cookieimg/cookie1/player_down.gif"),
 						new ImageIcon("img/cookieimg/cookie1/player_attack.png"));
@@ -105,6 +106,7 @@ public class SelectPanel extends JPanel{
 				ci = new CookieImg(new ImageIcon("img/cookieimg/cookie2/normal.gif"),
 						new ImageIcon("img/cookieimg/cookie2/jump.gif"),
 						new ImageIcon("img/cookieimg/cookie2/doublejump.gif"),
+						new ImageIcon("img/cookieing/cookie2/doublejump.gif"), //추가
 						new ImageIcon("img/cookieimg/cookie2/fall.png"),
 						new ImageIcon("img/cookieimg/cookie2/slide.gif"),
 						new ImageIcon("img/cookieimg/cookie2/hit.gif"));
@@ -131,6 +133,7 @@ public class SelectPanel extends JPanel{
 				ci= new CookieImg(new ImageIcon("img/cookieimg/cookie3/cookie.gif"),
 						new ImageIcon("img/cookieimg/cookie3/jump.png"),
 						new ImageIcon("img/cookieimg/cookie3/doublejump.gif"),
+						new ImageIcon("img/cookieimg/cookie3/doublejump.gif"), //추가
 						new ImageIcon("img/cookieimg/cookie3/fall.png"),
 						new ImageIcon("img/cookieimg/cookie3/slide.gif"),
 						new ImageIcon("img/cookieimg/cookie3/hit.png"));
@@ -158,6 +161,7 @@ public class SelectPanel extends JPanel{
 						new ImageIcon("img/cookieimg/cookie4/kjump.gif"),
 						new ImageIcon("img/cookieimg/cookie4/kjump.gif"),
 						new ImageIcon("img/cookieimg/cookie4/kjump.gif"),
+						new ImageIcon("img/cookieimg/cookie4/kjump.gif"), //(추가)
 						new ImageIcon("img/cookieimg/cookie4/kslide.gif"),
 						new ImageIcon("img/cookieimg/cookie4/kch.gif"));
 			}
@@ -177,7 +181,7 @@ public class SelectPanel extends JPanel{
 		selectBg.setBounds(0,0,784,461);
 		add(selectBg);
 		
-		// 개릭터 선택 타이틀
+		// 캐릭터 선택 타이틀
 		
 		JLabel selectTxt = new JLabel("");
 		selectTxt.setHorizontalAlignment(SwingConstants.CENTER);
