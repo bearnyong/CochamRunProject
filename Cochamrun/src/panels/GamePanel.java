@@ -86,11 +86,11 @@ public class GamePanel extends JPanel {
 	private ImageIcon slideIconDown;
 	
 	/* (수정) 뒤로가기 ESC 버튼 이미지화*/
-	private ImageIcon escc = new ImageIcon("img/back.png");
+	private ImageIcon rerunn = new ImageIcon("img/rerunn.png");
 	
-	// (수정중)
-	  ImageIcon newBtn = new ImageIcon("img/end/button.png");
-	JButton NewStartButton;
+	// (수정)다시 시작 버튼
+	ImageIcon restartt = new ImageIcon("img/restartt.png");
+	private JButton NewStartButton;
 	
 	
 	Image jumpBtn;
@@ -170,32 +170,25 @@ public class GamePanel extends JPanel {
 
 		// 일시정지 버튼
 		//(수정중)
-		NewStartButton = new JButton(newBtn);
+		NewStartButton = new JButton(restartt);
 		NewStartButton.setName("endAccept");
-		
 		NewStartButton.addMouseListener((MouseListener) o);  // 실질적 재시작은  마우스 리스너는 여기서  //어차피 재시작 되면 화면을 재구성하기 때문에
-		NewStartButton.setBounds(550, 370, 199, 81);
+		NewStartButton.setBounds(254, 150, 291, 81);
 		NewStartButton.setBorderPainted(false);
 		NewStartButton.setContentAreaFilled(false);
-//		NewStartButton.addMouseListener(new MouseAdapter() { // 필요없다
-//			@Override
-//			public void mouseClicked(MouseEvent e) {  
-//				NewStartButton.addMouseListener((MouseListener) o);
-//				
-//				escKeyOn = false;
-//			}
-//		});
-//		
+
 		
-		escButton = new JButton(escc);
-		escButton.setBounds(254, 200, 291, 81);
+		escButton = new JButton(rerunn);
+		escButton.setName("rerun");
+		escButton.setBounds(254, 220, 291, 81);
 		escButton.setBorderPainted(false); //(수정) Jbutton의 Borde(외곽선)을 없애주겠다.
 		escButton.setContentAreaFilled(false); //(수정) Jbutton의 버튼 내부 채우기x
 		escButton.setFocusPainted(false); //(수정) JButton 버튼을 선택하였을 때 발생되는 테두리 제거
 		escButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {// 키입력이오면 버튼 삭제 해주고 escKeyon을 false로 바꿔준다. 실질적 버튼 삭제는 여기서 실행 되기 때문에 둘다 remove 해줄 필요가 있다.
-				remove(NewStartButton); 
+				
+				remove(NewStartButton);
 				remove(escButton); //일시정지 삭제
 				escKeyOn = false;
 			}
