@@ -113,7 +113,7 @@ public class GamePanel extends JPanel {
 
 	private int resultScore = 0; // 결과점수를 수집하는 변수
 
-	private int gameSpeed = 5; // 게임 속도
+	private int gameSpeed = 7; // 게임 속도
 	//private int gameSpeed1 = 7; // 게임 속도2
 
 	private int nowField = 2000; // 발판의 높이를 저장.
